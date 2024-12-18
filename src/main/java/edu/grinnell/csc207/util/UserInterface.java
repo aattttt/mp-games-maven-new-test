@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
-
 /**
  * Handles user input and the flow of a game.
  *
@@ -14,6 +13,12 @@ import java.io.PrintWriter;
  * @author Aaron (Aj) Trimble
  */
 public class UserInterface {
+  /**
+   * Handles user input and the flow of a game.
+   *
+   * @param args command line input from the user.
+   *
+   */
   public static void main(String[] args) throws IOException {
     int row = -1;
     int column = -1;
@@ -31,9 +36,9 @@ public class UserInterface {
       width = 8;
       height = 8;
     } // else
-    System.out.println(
-        "Player 1 places X and player 2 places O. Each player places two pieces per turn." + 
-          "The player with the most four-in-a-rows at the end wins.");
+    pen.println(
+        "Player 1 places X and player 2 places O. Each player places two pieces per turn."
+            + " The player with the most four-in-a-rows at the end wins.");
     GameBoard gameBoard = new GameBoard(width, height);
     gameBoard.print(pen, true);
     for (int i = 0; i < ((height * width) / 4); i++) {
@@ -43,7 +48,7 @@ public class UserInterface {
       TurnProcessing.playTurn(gameBoard, row, column, 2, eyes, pen, height, "first");
       TurnProcessing.playTurn(gameBoard, row, column, 2, eyes, pen, height, "second");
       gameBoard.print(pen, true);
-    } //for
-    TurnProcessing .getWinner(gameBoard);
+    } // for
+    TurnProcessing.getWinner(gameBoard);
   } // main(String[])
 } // end class

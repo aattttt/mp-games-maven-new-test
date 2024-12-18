@@ -2,7 +2,6 @@ package edu.grinnell.csc207.util;
 
 import java.io.PrintWriter;
 
-
 /**
  * A GameBoard that holds moves made and calculates score.
  *
@@ -11,48 +10,99 @@ import java.io.PrintWriter;
  */
 public class GameBoard {
 
-  /*
-   * Fields
+  /**
+   * String matrix used to hold moves.
    */
   Matrix<String> board;
-  int height;
-  int width;
 
-  /*
-   * Constructor
+  /**
+   * Height of the board.
    */
-  public GameBoard(int width, int height) {
-    this.width = width;
-    this.height = height;
-    this.board = new MatrixV0<>(width, height, " ");
-  }
+  private int height;
 
-  /*
-   * Methods
+  /**
+   * Width of the board.
+   */
+  private int width;
+
+  /**
+   * Constructs the gameboard.
+   *
+   * @param w Height of the board.
+   * @param h Width of the board.
+   *
+   */
+  public GameBoard(int w, int h) {
+    this.width = w;
+    this.height = h;
+    this.board = new MatrixV0<>(this.width, this.height, " ");
+  } // GameBoard(int, int)
+
+  /**
+   * Returns if the space is filled or not.
+   *
+   * @param row    row of space to be checked.
+   * @param column column of space to be checked.
+   *
+   * @return true if filled, false if not
    */
   public boolean isFilledSpace(int row, int column) {
     if (!this.board.get(row, column).equals(" ")) {
-      System.out.println("That space is taken");
-    }
+      PrintWriter pen = new PrintWriter(System.out, true);
+      pen.println("That space is taken");
+    } // if
     return !this.board.get(row, column).equals(" ");
-  }
+  } // isFilledSpace(int, int)
 
+  /**
+   * Sets the given square to the given string.
+   *
+   * @param row    row selected.
+   * @param column column selected.
+   * @param piece  type of piece.
+   *
+   */
   public void set(int row, int column, String piece) {
     this.board.set(row, column, piece);
-  }
+  } // set(int, int, String)
 
+  /**
+   * Gets the piece at a given space.
+   *
+   * @param row    row selected.
+   * @param column column selected.
+   *
+   * @return the piece at the space.
+   */
   public String get(int row, int column) {
     return this.board.get(row, column);
-  }
+  } // get(int, int)
 
+  /**
+   * Gets the height of the board.
+   *
+   * @return the height of the board.
+   */
   public int getHeight() {
     return this.height;
-  }
+  } // getHeight()
 
+  /**
+   * Gets the width of the board.
+   *
+   * @return the width of the board.
+   */
   public int getWidth() {
     return this.width;
-  }
+  } // getWidth()
 
+  /**
+   * Calculates the number of four-in-a-rows for the given piece.
+   *
+   * @param piece row selected.
+   *
+   * @return the number of four-in-a-rows.
+   */
   public int getScore(String piece) {
     int score = 0;
     // points by rows
@@ -64,10 +114,10 @@ public class GameBoard {
           if (inLine == 4) {
             inLine--;
             score++;
-          }
+          } // if
         } else {
           inLine = 0;
-        }
+        } // else
       } // for
     } // for (points for rows)
       // points by column
@@ -79,10 +129,10 @@ public class GameBoard {
           if (inLine == 4) {
             inLine--;
             score++;
-          }
+          } // if
         } else {
           inLine = 0;
-        }
+        } // else
       } // for
     } // for (points for column)
       // points by diagonal top left corner
@@ -94,10 +144,10 @@ public class GameBoard {
           if (inLine == 4) {
             inLine--;
             score++;
-          }
+          } // if
         } else {
           inLine = 0;
-        }
+        } // else
       } // for (points for rows)
     } // for (diagonal top left corner)
       // points by diagonal top left corner
@@ -109,17 +159,23 @@ public class GameBoard {
           if (inLine == 4) {
             inLine--;
             score++;
-          }
+          } // if
         } else {
           inLine = 0;
-        }
+        } // else
       } // for (points for rows)
     } // for (diagonal top left corner)
     return score;
-  }
+  } // getScore(String)
 
+  /**
+   * Prints the current board.
+   *
+   * @param pen used to print.
+   * @param bol given to Matrix for path.
+   *
+   */
   public void print(PrintWriter pen, boolean bol) {
     Matrix.print(pen, this.board, bol);
-  }
-
-}
+  } // print(PrintWriter, boolean)
+} // end class
