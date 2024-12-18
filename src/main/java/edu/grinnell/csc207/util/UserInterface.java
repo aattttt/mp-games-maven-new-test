@@ -15,14 +15,25 @@ import java.io.PrintWriter;
  */
 public class UserInterface {
   public static void main(String[] args) throws IOException {
-    int width = 8;
-    int height = 8;
     int row = -1;
     int column = -1;
+    int width;
+    int height;
     PrintWriter pen = new PrintWriter(System.out, true);
     BufferedReader eyes = new BufferedReader(new InputStreamReader(System.in));
+    String prompt = "Type L for a long game or S for a short game \n";
+    String[] commands = {"L", "S", "l", "s"};
+    String gameLength = IOUtils.readCommand(pen, eyes, prompt, commands);
+    if (gameLength.equalsIgnoreCase("l")) {
+      width = 16;
+      height = 16;
+    } else {
+      width = 8;
+      height = 8;
+    } // else
     System.out.println(
-        "Player 1 places X and player 2 places O. Each player places two pieces per turn. The player with the most four-in-a-rows at the end wins.");
+        "Player 1 places X and player 2 places O. Each player places two pieces per turn." + 
+          "The player with the most four-in-a-rows at the end wins.");
     GameBoard gameBoard = new GameBoard(width, height);
     gameBoard.print(pen, true);
     for (int i = 0; i < ((height * width) / 4); i++) {
@@ -32,7 +43,7 @@ public class UserInterface {
       TurnProcessing.playTurn(gameBoard, row, column, 2, eyes, pen, height, "first");
       TurnProcessing.playTurn(gameBoard, row, column, 2, eyes, pen, height, "second");
       gameBoard.print(pen, true);
-    }
+    } //for
     TurnProcessing .getWinner(gameBoard);
-  }
-}
+  } // main(String[])
+} // end class
