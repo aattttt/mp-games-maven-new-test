@@ -4,7 +4,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class GameLogic {
+/**
+ * Handles the flow a turn and finds the winner.
+ *
+ * @author Moise (Moses) Milenge
+ * @author Aaron (Aj) Trimble
+ */
+public class TurnProcessing {
 
   static void playTurn(GameBoard gameBoard, int row, int column, int player, BufferedReader eyes,
       PrintWriter pen, int limit, String round) throws IOException {

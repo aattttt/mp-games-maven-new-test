@@ -6,6 +6,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
+
+/**
+ * Handles user input and the flow of a game.
+ *
+ * @author Moise (Moses) Milenge
+ * @author Aaron (Aj) Trimble
+ */
 public class UserInterface {
   public static void main(String[] args) throws IOException {
     int width = 8;
@@ -19,13 +26,13 @@ public class UserInterface {
     GameBoard gameBoard = new GameBoard(width, height);
     gameBoard.print(pen, true);
     for (int i = 0; i < ((height * width) / 4); i++) {
-      GameLogic.playTurn(gameBoard, row, column, 1, eyes, pen, height, "first");
-      GameLogic.playTurn(gameBoard, row, column, 1, eyes, pen, height, "second");
+      TurnProcessing.playTurn(gameBoard, row, column, 1, eyes, pen, height, "first");
+      TurnProcessing.playTurn(gameBoard, row, column, 1, eyes, pen, height, "second");
       gameBoard.print(pen, true);
-      GameLogic.playTurn(gameBoard, row, column, 2, eyes, pen, height, "first");
-      GameLogic.playTurn(gameBoard, row, column, 2, eyes, pen, height, "second");
+      TurnProcessing.playTurn(gameBoard, row, column, 2, eyes, pen, height, "first");
+      TurnProcessing.playTurn(gameBoard, row, column, 2, eyes, pen, height, "second");
       gameBoard.print(pen, true);
     }
-    GameLogic.getWinner(gameBoard);
+    TurnProcessing .getWinner(gameBoard);
   }
 }

@@ -2,6 +2,13 @@ package edu.grinnell.csc207.util;
 
 import java.io.PrintWriter;
 
+
+/**
+ * A GameBoard that holds moves made and calculates score.
+ *
+ * @author Moise (Moses) Milenge
+ * @author Aaron (Aj) Trimble
+ */
 public class GameBoard {
 
   /*
