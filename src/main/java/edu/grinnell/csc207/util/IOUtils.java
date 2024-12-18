@@ -23,9 +23,9 @@ public class IOUtils {
   /**
    * Repeatedly prompt for a command until one is returned.
    *
-   * @param pen Where to print the prompt.
-   * @param eyes How to read input.
-   * @param prompt The prompt to print.
+   * @param pen      Where to print the prompt.
+   * @param eyes     How to read input.
+   * @param prompt   The prompt to print.
    * @param commands The valid commands.
    *
    * @return the command entered.
@@ -53,8 +53,8 @@ public class IOUtils {
   /**
    * Read an integer.
    *
-   * @param pen Where to print the prompt.
-   * @param eyes How to read input.
+   * @param pen    Where to print the prompt.
+   * @param eyes   How to read input.
    * @param prompt The prompt to print.
    *
    * @return the integer read
@@ -82,11 +82,11 @@ public class IOUtils {
   /**
    * Read an integer within a particular range.
    *
-   * @param pen Where to print the prompt.
-   * @param eyes How to read input.
+   * @param pen    Where to print the prompt.
+   * @param eyes   How to read input.
    * @param prompt The prompt to print.
-   * @param lower The lower bound (inclusive).
-   * @param upper The upper bound (exclusive).
+   * @param lower  The lower bound (inclusive).
+   * @param upper  The upper bound (exclusive).
    *
    * @return the integer read
    *

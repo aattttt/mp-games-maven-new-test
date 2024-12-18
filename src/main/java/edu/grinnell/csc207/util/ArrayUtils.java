@@ -15,9 +15,9 @@ public class ArrayUtils {
   /**
    * Determine if an array contains a particular value.
    *
-   * @param <T> The type of values in the array.
+   * @param <T>  The type of values in the array.
    * @param vals The array to search.
-   * @param val The value to look for.
+   * @param val  The value to look for.
    *
    * @return true if the array contains an equal value and false otherwise.
    */
@@ -31,10 +31,11 @@ public class ArrayUtils {
   } // arrayContains(T[], T)
 
   /**
-   * Determine if an array of strings contains a string, treating comparison as case insensitive.
+   * Determine if an array of strings contains a string, treating comparison as
+   * case insensitive.
    *
    * @param strings The array of strings to search.
-   * @param str The string to look for.
+   * @param str     The string to look for.
    *
    * @return true if the element is in the array and false otherwise.
    */
@@ -51,11 +52,12 @@ public class ArrayUtils {
   /**
    * Remove all copies of a value from an array.
    *
-   * @param <T> The types of values in the array.
+   * @param <T>  The types of values in the array.
    * @param vals An array of values.
-   * @param val The value to remove
+   * @param val  The value to remove
    *
-   * @return The same array, if the value does not appear. Otherwise, a new array without the value
+   * @return The same array, if the value does not appear. Otherwise, a new array
+   *         without the value
    *         but with the remaing values in the same order.
    */
   public static <T> T[] removeAll(T[] vals, T val) {

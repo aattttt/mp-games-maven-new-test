@@ -1,7 +1,8 @@
 package edu.grinnell.csc207.util;
 
 /**
- * Thrown to indicate that the size of an array is incorrect (e.g., if we are expecting an array of
+ * Thrown to indicate that the size of an array is incorrect (e.g., if we are
+ * expecting an array of
  * size 10 and receive one of size 11).
  *
  * @author Samuel A. Rebelsky
