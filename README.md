@@ -15,4 +15,4 @@ Acknowledgements:
 
 Source:
 
-This code may be found at <https://github.com/moistr203/mp-games-maven>. It is based on code found at <https://github.com/Grinnell-CSC207/mp-games-maven>.
+This code may be found at <https://github.com/aattttt/mp-games-maven-new-test>. It is based on code found at <https://github.com/Grinnell-CSC207/mp-games-maven>.
